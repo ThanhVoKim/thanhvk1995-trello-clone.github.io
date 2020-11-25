@@ -1,0 +1,124 @@
+@charset "utf-8";
+//
+//VARIABLE :: BEGIN
+//
+$main-w : 1170;
+$sp-w : 700;
+
+$cl-btn1: rgba(255, 255, 255, 0.302);
+
+$color1: #0079bf;
+
+$text-cl1: #444;
+$text-cl2: #999;
+
+//
+//MIXIN :: BEGIN
+//
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+@mixin coverbg() {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+@mixin transition($s){
+    -webkit-transition: all $s ease-in-out;
+    -moz-transition: all $s ease-in-out;
+    -o-transition: all $s ease-in-out;
+    -ms-transition: all $s ease-in-out;
+    transition: all $s ease-in-out;
+}
+
+@mixin flex($jc: center, $al:center) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: $jc;
+  -ms-flex-pack: $jc;
+  justify-content: $jc;
+  -webkit-box-align: $al;
+  -ms-flex-align: $al;
+  align-items: $al;
+} 
+
+@mixin spflex() {
+  @supports (display: flex) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    &::before,
+    &::after {
+      visibility: hidden;
+    }
+  }
+}
+
+@mixin br($point) {
+  @media screen and (max-width: $point)  { @content; }
+}  
+
+%clear {
+    &:after{
+        content:"";
+        display:table;
+        clear:both;
+    }
+    &:before{
+        display: table;
+        content: " ";
+    }
+}
+
+@mixin scrollbar() { 
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 8px
+  }
+
+  &::-webkit-scrollbar-button:end:increment,
+  &::-webkit-scrollbar-button:start:decrement {
+    background: transparent;
+    display: none
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background: #d6dadc
+  }
+
+  &::-webkit-scrollbar-track-piece:vertical:start {
+    border-radius: 4px 4px 0 0
+  }
+
+  &::-webkit-scrollbar-track-piece:vertical:end {
+    border-radius: 0 0 4px 4px
+  }
+
+  &::-webkit-scrollbar-track-piece:horizontal:start {
+    border-radius: 4px 0 0 4px
+  }
+
+  &::-webkit-scrollbar-track-piece:horizontal:end {
+    border-radius: 0 4px 4px 0
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal,
+  &::-webkit-scrollbar-thumb:vertical {
+    background: #c4c9cc;
+    border-radius: 4px;
+    display: block;
+    height: 48px
+  }
+}
+
+
