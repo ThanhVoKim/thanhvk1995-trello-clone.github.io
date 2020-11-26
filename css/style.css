@@ -60,6 +60,10 @@ a:hover {
   color: inherit;
 }
 
+.a-alt:hover {
+  color: white;
+}
+
 p {
   margin: 0 0 8px;
 }
@@ -4693,6 +4697,12 @@ main {
   font-size: 16px;
   font-weight: 700;
   color: #444;
+
+}
+
+.thumb-attach-current .text-area-title {
+  background-color: #e2e4e6;
+  padding: 0 5px;
 }
 
 .thumb-attach-current .att-info .title {
@@ -4778,7 +4788,7 @@ main {
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .checklist-item:hover {
@@ -4816,11 +4826,17 @@ main {
 }
 
 .checklist-item-row {
+  padding: 6px 0 0;
+  width: 25%;
+}
+
+.checklist-item-row~.card-edit {
+  width: auto;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 6px 0 0;
 }
+
 
 .checklist-item-details-text {
   min-height: 18px;
@@ -4966,7 +4982,7 @@ main {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   clear: both;
-  display: inline-block;
+  /* display: inline-block; */
   margin: 6px 2px 6px 0;
   overflow: hidden;
   -o-text-overflow: ellipsis;
@@ -5840,7 +5856,7 @@ textarea.text-area-title {
 /* ====== */
 
 .hide {
-  display: none;
+  /* display: none; */
 }
 
 .show {
